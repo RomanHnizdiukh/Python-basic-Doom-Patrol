@@ -12,22 +12,12 @@ print(f'My vehicle maximum speed is {my_vehicle.max_speed} and my vehicle mileag
 
 # 2. Create a child class Bus that will inherit all the variables and methods of the Vehicle class and will have seating_capacity own method
 
-class Vehicle:
-
-    def __init__(self, max_speed, mileage):
-        self.max_speed = max_speed
-        self.mileage = mileage
-
-    def speed(self):
-        print(f'Vehicle is going with maximum speed {self.max_speed}')
-
-
 class Bus(Vehicle):
     def __init__(self, max_speed, mileage, seating_capacity):
         super().__init__(max_speed, mileage)
         self.seating_capacity = seating_capacity
 
-    def seating_capacity(self):
+    def seat_info(self):
         print(f'Bus seating capacity is {self.seating_capacity} people')
 
 
@@ -62,7 +52,7 @@ class SchoolBus(School, Bus):
         super().__init__(max_speed, mileage, seating_capacity)
         self.bus_school_color = bus_school_color
 
-    def bus_school_color(self):
+    def bus_color(self):
         print(f'Bus color is {self.bus_school_color}.')
 
 
@@ -93,23 +83,23 @@ for animal_sound in animals:
     print(animal_sound.make_sound())
 
 
-# 8*. Create class City with name, population instance attributes, return a new instance only when population > 1500,
-# otherwise return message: "Your city is too small". Hint: use magic methods / patterns
-class City:
-    def __init__(self, name, population):
-        self.name = name
-        self.population = population
-
-    def check_population(self):
-        if self.population > 1500:
-            return self.population
-        else:
-            return f'Your city {self.name} is too small'
-
-
-Toronto = City('Toronto', 50000)
-Male = City('Male', 1000)
-all_cities = (Toronto, Male)
-
-for i in all_cities:
-    print(i.check_population())
+# # 8*. Create class City with name, population instance attributes, return a new instance only when population > 1500,
+# # otherwise return message: "Your city is too small". Hint: use magic methods / patterns
+# class City:
+#     def __init__(self, name, population):
+#         self.name = name
+#         self.population = population
+#
+#     def check_population(self):
+#         if self.population > 1500:
+#             return self.population
+#         else:
+#             return f'Your city {self.name} is too small'
+#
+#
+# Toronto = City('Toronto', 50000)
+# Male = City('Male', 1000)
+# all_cities = (Toronto, Male)
+#
+# for i in all_cities:
+#     print(i.check_population())
